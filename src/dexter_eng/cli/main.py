@@ -56,7 +56,14 @@ def _run_edital(pdf: str, prompt: Path, verbose: bool, ocr: str, local_model: st
         logger.info("Flags futuras recebidas (ainda desativadas): ocr=%s, local_model=%s", ocr, local_model)
 
     settings = Settings()
-    llm = OpenAILLMClient(model=settings.llm_model, api_key=settings.llm_api_key)
+    if local_model and local_model != "off":
+        from dexter_eng.adapters.llm.local_ollama_client import LocalOllamaClient
+
+        logger.info("Usando modelo local via Ollama: %s", local_model)
+        # Instancia com defaults seguros conforme solicitado
+        llm = LocalOllamaClient(model=local_model)
+    else:
+        llm = OpenAILLMClient(model=settings.llm_model, api_key=settings.llm_api_key)
     prompt_template = _read_prompt(prompt)
 
     out = run_edital_pipeline(

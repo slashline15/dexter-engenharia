@@ -1,0 +1,389 @@
+Você é um analista de editais. Extraia informações SOMENTE do texto fornecido.
+Retorne APENAS JSON válido no formato do schema a seguir.
+
+REGRAS:
+- Não invente datas ou requisitos.
+- Sempre que possível, inclua citações com (page, excerpt).
+- Se algo estiver ambíguo, adicione em "pendencias".
+
+SCHEMA (resumo):
+{
+  "orgao": string|null,
+  "objeto": string|null,
+  "prazos": [{"name": "...", "date_text": "...", "citations":[{"page":1,"excerpt":"..."}]}],
+  "documentos_exigidos": [{"title":"...","description":"...","citations":[...]}],
+  "criterios_habilitacao": [...],
+  "penalidades": [...],
+  "pendencias": ["..."]
+}
+
+TEXTO DO EDITAL:
+=== PAGE 1 ===
+Documento assinado digitalmente conforme MP nº 2.200-2 de 24/08/2001,
+que institui a Infraestrutura de Chaves Públicas Brasileira - ICP-Brasil.
+Este documento pode ser verificado no endereço eletrônico
+http://www.in.gov.br/autenticidade.html, pelo código 05302026012600029
+29
+Nº 17, segunda-feira, 26 de janeiro de 2026
+ISSN 1677-7069
+Seção 3
+A avaliação psicológica ocorrerá dentro dos parâmetros estabelecidos nas
+Resoluções do Conselho Federal de Psicologia n° 10/2005, n° 31/2022 e n° 8/2025.
+A AP avaliará os seguintes requisitos:
+a) Intelectivos - destinado à verificação das aptidões gerais e/ou específicas
+dos candidatos em relação às exigências da atividade pretendida. Requisitos a serem
+avaliados: rapidez, memória e inteligência;
+b) De personalidade - destinado
+à verificação das características de
+personalidade e motivacionais do candidato em relação às exigências da atividade
+pretendida. Requisitos a serem avaliados: adaptabilidade, aceitação de hierarquia,
+cooperação,
+disciplina, controle
+emocional,
+capacidade
+de trabalhar
+em
+equipe,
+responsabilidade, iniciativa e motivação; e
+c) A avaliação psicológica avaliará também as características psicológicas
+restritivas ou impeditivas ao desempenho das atribuições inerentes ao cargo
+pretendido:
+Aspectos considerados impeditivos - presença de indicadores, nos testes e
+técnicas de avaliação, que representem prejuízos relevantes nos requisitos de controle
+emocional, aceitação de hierarquia e disciplina
+Capitão de Mar e Guerra PAULO RAFAEL RIBEIRO GONZALEZ
+Diretor
+EDITAL DE 23 DE JANEIRO DE 2026
+CONCURSO PÚBLICO PARA INGRESSO NO CORPO DE ENGENHEIROS DA MARINHA EM
+2026 (CP-CEM/2026)
+O Serviço de Seleção do Pessoal da Marinha (SSPM), no uso das atribuições
+referentes ao item 3 do artigo 3° e item I do artigo 12 do seu Regulamento, aprovado
+pela Portaria n° 69 de 30 de março de 2022 da Diretoria de Ensino da Marinha e de
+acordo com a Lei n° 11.279 de 9 de fevereiro de 2006, torna público que, no período
+de 10/03/2026 a 08/04/2026, estarão abertas as inscrições do Concurso Público para
+Ingresso no Corpo de Engenheiros da Marinha em 2026 (CP-CEM/2026).
+O presente Edital estará à disposição dos candidatos na Internet, no endereço
+www.ingressonamarinha.mar.mil.br.
+As
+datas relativas
+às
+diversas etapas
+e
+eventos
+do Concurso
+Público
+encontram-se disponíveis no Calendário de Eventos do Anexo II.
+PARTE 1 - NORMAS PARA O CONCURSO PÚBLICO
+1 - PRINCIPAIS ASPECTOS:
+1.1 - CARREIRA MILITAR
+1.1.1 - Todo cidadão, após ingressar na Marinha do Brasil (MB), prestará
+compromisso de honra, no qual firmará a sua aceitação consciente das obrigações e dos
+deveres militares e manifestará a sua firme disposição de bem cumpri-los.
+1.1.2 - Os deveres militares emanam de um conjunto de vínculos racionais e
+morais que ligam o militar à Pátria e ao serviço e compreendem, essencialmente:
+a) A dedicação e a fidelidade à Pátria, cuja honra, integridade e instituições
+devem ser defendidas mesmo com o sacrifício da própria vida;
+b) O culto aos símbolos nacionais;
+c) A probidade e a lealdade em todas as circunstâncias;
+d) A disciplina e o respeito à hierarquia;
+e) O rigoroso cumprimento das obrigações e das ordens; e
+f) A obrigação de tratar o subordinado dignamente e com urbanidade.
+1.1.3 - O acesso da hierarquia militar, fundamentado principalmente no valor
+moral e profissional, é seletivo, gradual e sucessivo e será feito mediante promoções, de
+conformidade com a legislação e regulamentação de promoções de oficiais, de modo a
+obter-se um fluxo regular e equilibrado para os militares, atendidos os requisitos
+constantes do Plano de Carreira de Oficiais da Marinha (PCOM).
+1.1.4 - Conforme a Lei n° 6.880/80, ao militar da ativa é vedado comerciar ou
+tomar parte na administração ou gerência de sociedade ou dela ser sócio ou participar,
+exceto
+como
+acionista
+ou
+quotista,
+em sociedade
+anônima
+ou
+por
+quotas
+de
+responsabilidade limitada. Dessa forma, o candidato, por ocasião de sua incorporação na
+MB, não pode estar envolvido na administração ou gerenciamento da sociedade.
+1.1.5 - O Serviço Militar consiste no exercício de atividades específicas
+desempenhadas nas Forças Armadas - Marinha, Exército e Força Aérea - e compreenderá,
+na mobilização, todos os encargos relacionados com a defesa nacional, nos termos da Lei
+n° 4.375, de 17 de gosto de 1964, e demais normas aplicáveis. O candidato aprovado e
+incorporado, nomeado ou matriculado na MB estará sujeito à mobilização e ao emprego
+em atividades relacionadas à defesa nacional, em qualquer tempo, inclusive em situações
+de mobilização nacional, estado de defesa, estado de sítio ou de conflito, podendo ser
+designado, conforme o grau de mobilização exigido pelo Chefe Supremo das Forças
+Armadas (Presidente da República), em tempos de conflito armado, para atividades
+operativas, técnicas ou de apoio ao combate, e, em tempos de paz, em atividades
+relacionadas ao preparo para o melhor emprego da Força.
+1.1.5.1 - Para melhor entendimento, de acordo com o grau de mobilização
+imposto, poderá haver emprego de militares de quaisquer corpos e quadros em
+atividades finalísticas de combate, ou em apoio aproximado dentro da zona de combate,
+conforme os art. 1° e 2° da Lei n° 4.375/1964.
+1.2 - CORPO DE ENGENHEIROS DA MARINHA
+1.2.1 - O Corpo de Engenheiros da Marinha (CEM) destina-se, de acordo com
+o grau de mobilização nacional, ao preenchimento de cargos e funções relativos à
+aplicação de conhecimentos específicos, necessários às atividades de manutenção e
+reparo dos meios existentes e ao desenvolvimento e projeto de novos meios, além das
+atividades inerentes à carreira militar, nos termos da Lei n° 9.519, de 26 de novembro
+de 1997.
+1.2.2 - Para informações adicionais acerca do CEM, o candidato poderá
+acessar 
+a 
+página 
+do 
+SSPM 
+na 
+Internet, 
+no 
+sítio 
+eletrônico
+www.ingressonamarinha.mar.mil.br.
+1.3 - CURSO DE FORMAÇÃO DE OFICIAIS (CFO)
+1.3.1 - O candidato aprovado e classificado no Resultado Final da Seleção (RF)
+realizará o Ensino Militar do CFO, no Centro de Instrução Almirante Wandenkolk (CIAW),
+no Rio de Janeiro.
+1.3.2 - O Curso tem por finalidade o preparo do candidato para o exercício
+de cargos e funções em Organizações Militares da Marinha, situadas em qualquer
+Unidade da Federação, de acordo com as suas qualificações e atendendo à conveniência
+do serviço, por meio da necessária instrução militar-naval.
+1.3.3 - O Curso é constituído por um Período de Adaptação (PA) de,
+aproximadamente, 2 (duas) semanas e uma etapa curricular, compreendendo as
+atividades previstas nos respectivos currículos. Durante esse curso, o Guarda-Marinha
+perceberá a remuneração atinente a essa graduação, tendo como valor bruto, em termos
+atuais, R$ 9.663,60 (nove mil seiscentos e sessenta e 3 reais e sessenta centavos), sendo
+R$ 7.644,00 (sete mil seiscentos e quarenta e quatro reais) relativos ao soldo militar, R$
+1.637,40 (mil seiscentos e trinta e sete reais e quarenta centavos) relativos ao adicional
+militar e R$ 382,20 (trezentos e oitenta e dois reais e vinte centavos) relativos ao
+adicional de compensação por disponibilidade militar, conforme previsto na legislação em
+vigor,
+além
+de
+serem proporcionados
+alimentação,
+uniforme,
+assistência
+médico-
+odontológica, psicológica, social e religiosa.
+1.3.4 - Durante o CFO, o candidato fará um Estágio de Aplicação de Oficiais
+(EAO), com duração de 12 (doze) semanas, que tem por finalidade a adaptação às
+características do serviço naval, inerentes à profissão, à complementação de sua
+formação Militar-Naval e da formação profissional e a avaliação complementar para o
+desempenho de funções técnicas e administrativas. Será realizado em Organizações
+Militares (OM) especialmente designadas para tal, sob a supervisão do CIAW.
+1.3.5 - O CFO terá a duração de, aproximadamente, 34 (trinta e quatro)
+semanas.
+1.3.6 - Durante o CFO e o EAO, o candidato estará sujeito ao Regulamento e
+ao Regimento Interno do CIAW e à Legislação vigente aplicada a todos os militares da
+
+
+ativa das Forças Armadas.
+1.3.7 - O ingresso no CEM ocorrerá no posto de Primeiro-Tenente, após o
+candidato obter a aprovação em todas as fases da Seleção Inicial e ter sido aprovado em
+todas as fases do CFO.
+1.3.8 - Antes de completados 5 (cinco) anos da nomeação ao Oficialato, os
+Oficiais serão avaliados pela Comissão de Promoções de Oficiais (CPO), visando a sua
+permanência em caráter definitivo na Marinha. Os oficiais que não obtiverem avaliação
+favorável serão licenciados ex officio do Serviço Ativo da Marinha (SAM).
+1.3.9 - O oficial de carreira que requerer demissão com menos de três anos
+de oficialato ou for demitido ex officio por ter passado a exercer cargo ou emprego
+público permanente, estranho à sua carreira, indenizará o erário pelas despesas
+efetuadas pela União com a sua preparação, formação ou adaptação, conforme previsto
+na Portaria n° 4.044/GM-MD, de 4 de outubro de 2021.
+2 - VAGAS
+2.1 - O presente CP destina-se ao preenchimento de vagas em atendimento
+aos seguintes requisitos:
+a) Cargo: Militar da ativa;
+b) Função: Exercício de atividades militares típicas; e
+c) Área de conhecimento: Identificação clara na tabela de vagas, vinculada às
+atribuições militares correspondentes.
+2.1.1 A distribuição de vagas nas especialidades serão preenchidas conforme
+abaixo discriminadas:
+.
+.ESPECIALIDADE (*)
+.I
+.II
+.III
+.IV
+.TOTAL DE VAGAS
+. .Engenharia Aeronáutica
+.
+.
+.
+.
+.1
+. .Engenharia Cartográfica
+.
+.
+.
+.
+.1
+. .Engenharia Civil
+.
+.
+.
+.
+.2
+. .Engenharia de Produção
+.
+.
+.
+.
+.2
+. .Engenharia de Sistemas de Computação
+.
+.
+.
+.
+.1
+. .Engenharia de Telecomunicações
+.
+.
+.
+.
+.1
+. .Engenharia Elétrica
+.
+.
+.
+.
+.4
+. .Engenharia Eletrônica
+.
+.
+.
+.
+.3
+. .Engenharia Mecânica
+.
+.
+.
+.
+.5
+. .Engenharia Mecânica de Aeronáutica
+.
+.
+.
+.
+.1
+. .Engenharia Mecatrônica
+.
+.
+.
+.
+.1
+. .Engenharia Naval
+.
+.
+.
+.
+.2
+. .Engenharia Nuclear
+.
+.
+.
+.
+.1
+. .Engenharia Química
+.
+.
+.
+.
+.1
+(*) Além das profissões relacionadas, poderão ser considerados válidos os
+documentos comprobatórios de conclusão de cursos de bacharelado cujas denominações
+anteriormente utilizadas constem na Lista de Convergência de Denominação constante
+dos Referenciais Curriculares Nacionais dos Cursos de Bacharelado e Licenciatura,
+disponível
+no
+sítio eletrônico
+do
+Ministério
+da
+Educação (MEC),
+na
+Internet
+www.mec.gov.br, desde que os cursos apresentem competências similares.
+I - AMPLA CONCORRÊNCIA
+II - VAGAS RESERVADAS PARA CANDIDATOS PRETOS E PARDOS
+III - VAGAS RESERVADAS PARA CANDIDATOS INDÍGENAS
+IV - VAGAS RESERVADAS PARA CANDIDATOS QUILOMBOLAS
+OBS: A distribuição das vagas reservadas para pretos ou pardos, indígenas e
+quilombolas, bem como as vagas para ampla concorrência serão informadas
+tempestivamente.
+2.2. VAGAS DESTINADAS AOS CANDIDATOS PRETOS OU PARDOS, INDÍGENAS E
+QUILOMBOLAS (Lei n° 15.142, de 3 de junho de 2025, DECRETO n° 12.536, DE 27 DE
+JUNHO DE 2025, INSTRUÇÃO NORMATIVA CONJUNTA MGI/MIR/MPI n° 261, DE 27 DE
+JUNHO DE 2025).
+2.2.1 - Das vagas destinadas para cada especialidade neste Edital, 30% (trinta
+por cento) serão providas na forma da Lei n° 15.142, de 3 de junho de 2025.
+2.2.1.1 - Os percentuais paras as cotas, a serem aplicados com base no
+número total de vagas serão:
+- 25% para negros; 3% para indígenas e 2% para quilombolas.
+2.2.2 - Para concorrer às vagas reservadas a candidatos pretos ou pardos,
+indígenas e quilombolas, o candidato deverá assim se autodeclarar, no momento da
+inscrição, podendo optar por mais de uma opção.
+2.2.3 - Os candidatos que se autodeclararem pretos ou pardos, indígenas e
+quilombolas deverão indicar, ainda, em campo específico, no momento da inscrição, se
+pretendem concorrer pelo sistema de reserva de vagas.
+2.2.4 - Os candidatos pretos ou pardos, indígenas e quilombolas, concorrerão
+concomitantemente às vagas reservadas e às vagas destinadas à ampla concorrência, de
+acordo com a sua classificação no certame.
+2.2.5 - Os candidatos pretos ou pardos, indígenas e quilombolas aprovados
+dentro do número de vagas oferecidas para ampla concorrência não serão computados
+para efeito do preenchimento das vagas reservadas.
+2.2.6 - Em caso de desistência do candidato preto ou pardo, indígena e
+quilombola, aprovado em vaga reservada, esta será preenchida pelo candidato preto e
+pardo, indígena e quilombola posteriormente classificado.
+2.2.7 - Na hipótese de não haver candidatos quilombolas em número
+suficiente para ocupar as vagas reservadas, as vagas remanescentes serão revertidas para
+as pessoas indígenas, observada a ordem de classificação.
+2.2.8 - Na hipótese de não haver candidatos indígenas em número suficiente
+para ocupar as vagas reservadas, as vagas remanescentes serão revertidas para as
+pessoas quilombolas, observada a ordem de classificação.
+2.2.9 - Na hipótese de não haver candidatos indígenas ou quilombolas em
+número suficiente para ocupar as vagas reservadas, as vagas remanescentes serão
+revertidas para as pessoas pretas e pardas, e, por último, para a ampla concorrência,
+observada a ordem de classificação.
+2.2.10 - A relação dos candidatos que se autodeclararam pretos ou pardos,
+indígenas e quilombolas e que desejam concorrer às vagas reservadas, na forma da Lei
+n° 15.142, de 3 de junho de 2025, será divulgada na data conforme previsto no
+Calendário de Eventos, Anexo II deste Edital.
+2.2.11 - Até 5 (cinco) dias úteis após a data da divulgação da relação dos
+candidatos concorrentes às vagas reservadas, conforme previsto no Cronograma de
+Eventos, apêndice I deste Edital, será facultado ao candidato solicitar inclusão ou desistir
+de concorrer pelo sistema de reserva de vagas, mediante requerimento.
+3 - INSCRIÇÕES
+3.1 - CONDIÇÕES PARA A INSCRIÇÃO/MATRÍCULA
+3.1.1 - A inscrição é obrigatória para todos os candidatos e deverá ser
+realizada, em âmbito regional, pelo próprio candidato, via Internet.
+3.1.2 - Ao realizar a inscrição, o candidato deverá certificar-se que preenche
+os requisitos abaixo:
+a) Ser brasileiro nato, de ambos os sexos, nos termos do art. 12, inciso I e
+seu § 3°, inciso VI, da Constituição da República Federativa do Brasil de 1988
+(CRFB/1988);
+b) Possuir registro no Cadastro de Pessoas Físicas (CPF);
+c) Possuir documento oficial de identificação original, em meio físico, com
+assinatura e com fotografia na qual possa ser reconhecido, na forma definida no subitem
+4.3;
+d) Efetuar o pagamento da taxa de inscrição ou requerer sua isenção
+conforme previsto no subitem 3.3 do Edital;
+e) Ter menos de 35 (trinta e cinco) anos de idade no dia 30 do mês de junho
+de 2027, nos termos da Lei n° 11.279, de 9 de fevereiro de 2006 alterada pela Lei n°
+14.296, de 4 de janeiro de 2022;
+f) Não ser portador de Certificado de Isenção do Serviço Militar devido às
+suas condições morais, físicas ou mentais;
+g) Atender
+aos índices mínimos
+de padrões
+psicofísicos admissionais,
+conforme detalhado no Anexo IV;
+h) Ter concluído ou estar em fase de conclusão do curso superior relativo à
+profissão a que concorre até a data da matrícula no curso, devendo, neste caso, ser
+observado o previsto na alínea k do subitem 14.1;
+i) Estar registrado no órgão fiscalizador da profissão a que concorre, até a
+data da matrícula no curso, devendo, neste caso, ser observado o previsto na alínea l do
+subitem 14.1;

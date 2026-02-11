@@ -1,27 +1,43 @@
-from pydantic import BaseModel, Field
-from typing import List, Optional
+from pydantic import BaseModel, Field, BeforeValidator
+from typing import List, Optional, Any
+from typing_extensions import Annotated
+
+def extract_string_from_dict(v: Any) -> Any:
+    """
+    Corrige alucinação comum de LLMs locais que retornam
+    {'title': '...'} onde deveria ser apenas '...'.
+    """
+    if isinstance(v, dict):
+        # Tenta pegar o primeiro valor string que encontrar
+        for key, val in v.items():
+            if isinstance(val, str):
+                return val
+    return v
+
+# Cria um tipo "RobustString" que aceita str ou tenta extrair de dict
+RobustString = Annotated[str, BeforeValidator(extract_string_from_dict)]
 
 class Citation(BaseModel):
     page: int = Field(..., ge=1)
-    excerpt: str = Field(..., min_length=1)
+    excerpt: RobustString = Field(..., min_length=1)
 
 class Requirement(BaseModel):
-    title: str
-    description: str
+    title: RobustString
+    description: RobustString
     citations: List[Citation] = Field(default_factory=list)
 
 class Deadline(BaseModel):
-    name: str
-    date_text: str
+    name: RobustString
+    date_text: RobustString
     citations: List[Citation] = Field(default_factory=list)
 
 class EditalExtraction(BaseModel):
-    orgao: Optional[str] = None
-    objeto: Optional[str] = None
+    orgao: Optional[RobustString] = None
+    objeto: Optional[RobustString] = None
 
     prazos: List[Deadline] = Field(default_factory=list)
     documentos_exigidos: List[Requirement] = Field(default_factory=list)
     criterios_habilitacao: List[Requirement] = Field(default_factory=list)
     penalidades: List[Requirement] = Field(default_factory=list)
 
-    pendencias: List[str] = Field(default_factory=list)  # coisas que faltaram/ambíguas
+    pendencias: List[RobustString] = Field(default_factory=list)  # coisas que faltaram/ambíguas

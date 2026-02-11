@@ -1,0 +1,14 @@
+{
+  "pipeline_version": "0.2",
+  "model": "llama3.1:latest",
+  "pdf_path": "src/dexter_eng/data/samples/edital_exemplo.pdf",
+  "chars_extracted": 15186,
+  "chars_prompt": 15828,
+  "prompt_chars": 15828,
+  "response_chars": 1702,
+  "cache_hit": false,
+  "request_id": "ollama_152bc77fbb6e45f3907c72b38771b1b3",
+  "ocr": "off",
+  "local_model": "llama3.1:latest",
+  "elapsed_seconds": 18.5
+}

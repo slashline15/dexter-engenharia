@@ -1,0 +1,29 @@
+{
+  "orgao": "Serviço de Seleção do Pessoal da Marinha (SSPM)",
+  "objeto": "Concurso Público para Ingresso no Corpo de Engenheiros da Marinha em 2026",
+  "prazos": [
+    {
+      "name": "Inscrições",
+      "date_text": "10/03/2026 a 08/04/2026",
+      "citations": []
+    }
+  ],
+  "documentos_exigidos": [],
+  "criterios_habilitacao": [
+    {
+      "title": "Requisitos de habilitação",
+      "description": "Ser brasileiro nato, possuir registro no Cadastro de Pessoas Físicas (CPF), documento oficial de identificação original e ter menos de 35 anos de idade no dia 30 do mês de junho de 2027.",
+      "citations": []
+    }
+  ],
+  "penalidades": [
+    {
+      "title": "Desistência do candidato preto ou pardo, indígena e quilombola",
+      "description": "A vaga será preenchida pelo candidato preto e pardo, indígena e quilombola posteriormente classificado.",
+      "citations": []
+    }
+  ],
+  "pendencias": [
+    "Distribuição das vagas reservadas para pretos ou pardos, indígenas e quilombolas"
+  ]
+}
