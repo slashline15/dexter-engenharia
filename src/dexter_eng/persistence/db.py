@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 import sqlite3
+from hashlib import sha256
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -13,6 +14,20 @@ logger = logging.getLogger(__name__)
 _DB_PATH: Path = Path("dexter.db")
 _conn: Optional[sqlite3.Connection] = None
 _initialized: bool = False
+
+_RUNS_ADDITIONAL_COLUMNS = {
+    "prompt_chars": "INTEGER",
+    "response_chars": "INTEGER",
+    "cache_hit": "INTEGER",
+    "llm_model": "TEXT",
+    "request_id": "TEXT",
+}
+
+_LLM_CACHE_ADDITIONAL_COLUMNS = {
+    "prompt_chars": "INTEGER",
+    "response_chars": "INTEGER",
+    "response_sha256": "TEXT",
+}
 
 _CREATE_TABLES_SQL = """
 CREATE TABLE IF NOT EXISTS documents (
@@ -52,9 +67,32 @@ def _get_conn() -> sqlite3.Connection:
         _conn.row_factory = sqlite3.Row
     if not _initialized:
         _conn.executescript(_CREATE_TABLES_SQL)
+        migrate_db_if_needed(_conn)
         _conn.commit()
         _initialized = True
     return _conn
+
+
+def _get_table_columns(conn: sqlite3.Connection, table_name: str) -> set[str]:
+    rows = conn.execute(f"PRAGMA table_info({table_name})").fetchall()
+    return {row["name"] for row in rows}
+
+
+def migrate_db_if_needed(conn: sqlite3.Connection | None = None) -> None:
+    """Aplica migrações leves com ALTER TABLE quando necessário."""
+    active_conn = conn or _get_conn()
+
+    runs_columns = _get_table_columns(active_conn, "runs")
+    for col, col_type in _RUNS_ADDITIONAL_COLUMNS.items():
+        if col not in runs_columns:
+            logger.info("Aplicando migração: runs.%s", col)
+            active_conn.execute(f"ALTER TABLE runs ADD COLUMN {col} {col_type}")
+
+    llm_cache_columns = _get_table_columns(active_conn, "llm_cache")
+    for col, col_type in _LLM_CACHE_ADDITIONAL_COLUMNS.items():
+        if col not in llm_cache_columns:
+            logger.info("Aplicando migração: llm_cache.%s", col)
+            active_conn.execute(f"ALTER TABLE llm_cache ADD COLUMN {col} {col_type}")
 
 
 def init_db(db_path: str | Path | None = None) -> None:
@@ -97,8 +135,11 @@ def create_run(document_id: int, model: str, pipeline_version: str) -> int:
     conn = _get_conn()
     now = datetime.now(timezone.utc).isoformat()
     cur = conn.execute(
-        "INSERT INTO runs (document_id, pipeline_version, model, started_at, status) VALUES (?, ?, ?, ?, ?)",
-        (document_id, pipeline_version, model, now, "running"),
+        """
+        INSERT INTO runs (document_id, pipeline_version, model, llm_model, started_at, status)
+        VALUES (?, ?, ?, ?, ?, ?)
+        """,
+        (document_id, pipeline_version, model, model, now, "running"),
     )
     conn.commit()
     logger.info("Run #%d criado (doc_id=%d, model=%s)", cur.lastrowid, document_id, model)
@@ -117,6 +158,67 @@ def finish_run(run_id: int, status: str, error: str | None = None) -> None:
     logger.info("Run #%d finalizado (status=%s)", run_id, status)
 
 
+def record_run_metrics(
+    run_id: int,
+    *,
+    prompt_chars: int,
+    response_chars: int,
+    cache_hit: bool,
+    request_id: str | None,
+) -> None:
+    """Atualiza métricas de uso/custo da etapa de LLM na run."""
+    conn = _get_conn()
+    conn.execute(
+        """
+        UPDATE runs
+        SET prompt_chars = ?, response_chars = ?, cache_hit = ?, request_id = ?
+        WHERE id = ?
+        """,
+        (prompt_chars, response_chars, int(cache_hit), request_id, run_id),
+    )
+    conn.commit()
+
+
+def get_run_history(limit: int = 20) -> list[sqlite3.Row]:
+    """Retorna histórico de runs recentes para relatórios CLI."""
+    conn = _get_conn()
+    rows = conn.execute(
+        """
+        SELECT
+            id,
+            status,
+            cache_hit,
+            prompt_chars,
+            response_chars,
+            COALESCE(llm_model, model) AS model,
+            started_at,
+            ended_at
+        FROM runs
+        ORDER BY id DESC
+        LIMIT ?
+        """,
+        (limit,),
+    ).fetchall()
+    return list(rows)
+
+
+def get_cache_stats() -> dict[str, float | int]:
+    """Retorna estatísticas do cache com base nas runs registradas."""
+    conn = _get_conn()
+    cache_entries = conn.execute("SELECT COUNT(*) AS total FROM llm_cache").fetchone()["total"]
+    total_runs = conn.execute("SELECT COUNT(*) AS total FROM runs").fetchone()["total"]
+    cache_hits = conn.execute(
+        "SELECT COUNT(*) AS total FROM runs WHERE cache_hit = 1"
+    ).fetchone()["total"]
+    hit_rate = (cache_hits / total_runs) if total_runs else 0.0
+    return {
+        "total_entries": int(cache_entries),
+        "total_runs": int(total_runs),
+        "cache_hits": int(cache_hits),
+        "hit_rate": float(hit_rate),
+    }
+
+
 def get_cached_response(prompt_hash: str, model: str) -> Optional[str]:
     """Consulta cache de resposta LLM por hash de prompt."""
     conn = _get_conn()
@@ -129,13 +231,35 @@ def get_cached_response(prompt_hash: str, model: str) -> Optional[str]:
     return None
 
 
-def save_cached_response(prompt_hash: str, model: str, response_text: str) -> None:
+def save_cached_response(
+    prompt_hash: str,
+    model: str,
+    response_text: str,
+    *,
+    prompt_chars: int | None = None,
+    response_chars: int | None = None,
+) -> None:
     """Salva resposta da LLM no cache."""
     conn = _get_conn()
     now = datetime.now(timezone.utc).isoformat()
+    resolved_prompt_chars = prompt_chars
+    resolved_response_chars = response_chars if response_chars is not None else len(response_text)
+    response_digest = sha256(response_text.encode("utf-8")).hexdigest()
     conn.execute(
-        "INSERT OR IGNORE INTO llm_cache (prompt_hash, model, response_text, created_at) VALUES (?, ?, ?, ?)",
-        (prompt_hash, model, response_text, now),
+        """
+        INSERT OR IGNORE INTO llm_cache
+        (prompt_hash, model, response_text, created_at, prompt_chars, response_chars, response_sha256)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        """,
+        (
+            prompt_hash,
+            model,
+            response_text,
+            now,
+            resolved_prompt_chars,
+            resolved_response_chars,
+            response_digest,
+        ),
     )
     conn.commit()
 
