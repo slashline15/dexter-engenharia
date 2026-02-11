@@ -10,3 +10,7 @@
 .claude/
 src\dexter_eng.egg-info\*
 src\dexter_eng\__pycache__\*
+out\runs\*.md
+out\runs\*.json
+out\runs\*\*.md
+out\runs\*\*.json

@@ -1,0 +1,699 @@
+Você é um analista de editais. Extraia informações SOMENTE do texto fornecido.
+Retorne APENAS JSON válido no formato do schema a seguir.
+
+REGRAS:
+- Não invente datas ou requisitos.
+- Sempre que possível, inclua citações com (page, excerpt).
+- Se algo estiver ambíguo, adicione em "pendencias".
+
+SCHEMA (resumo):
+{
+  "orgao": string|null,
+  "objeto": string|null,
+  "prazos": [{"name": "...", "date_text": "...", "citations":[{"page":1,"excerpt":"..."}]}],
+  "documentos_exigidos": [{"title":"...","description":"...","citations":[...]}],
+  "criterios_habilitacao": [...],
+  "penalidades": [...],
+  "pendencias": ["..."]
+}
+
+TEXTO DO EDITAL:
+=== PAGE 1 ===
+ 
+ 
+INSTITUTO DE PROTEÇÃO AMBIENTAL DO AMAZONAS (IPAAM) 
+CONCURSO PÚBLICO PARA O PROVIMENTO DE VAGAS E A FORMAÇÃO DE CADASTRO DE RESERVA EM 
+CARGOS DE ANALISTA AMBIENTAL E DE ASSISTENTE AMBIENTAL, DA CARREIRA DE ESPECIALISTA EM 
+MEIO AMBIENTE 
+EDITAL Nº 1 – IPAAM, DE 22 DE DEZEMBRO DE 2025 
+ 
+O Diretor Presidente do Instituto de Proteção Ambiental do Amazonas (IPAAM), tendo em vista 
+o disposto na Lei Estadual nº 1.762, de 14 de novembro de 1986, e suas alterações; na Lei Estadual nº 4.605, 
+de 28 de maio de 2018, e suas alterações; e na Lei Estadual nº 6.868, de 8 de maio de 2024, torna pública a 
+realização de concurso público para o provimento de vagas e a formação de cadastro de reserva em cargos 
+de Analista Ambiental e de Assistente Ambiental, da carreira de Especialista em Meio Ambiente, mediante as 
+condições estabelecidas neste edital. 
+1 DAS DISPOSIÇÕES PRELIMINARES 
+1.1  O  concurso  público  será  regido  por  este  edital  e  executado  pelo  Centro  Brasileiro  de  Pesquisa  em 
+Avaliação e Seleção e de Promoção de Eventos (Cebraspe). 
+1.1.1  O  Cebraspe  é  o  detentor  exclusivo  do  Método  Cespe  de  realização  de  avaliações,  certificações  e 
+seleções. Esse método está em constante evolução, sendo desenvolvido e aperfeiçoado a partir de pesquisas 
+acadêmicas, algoritmos, processos estatísticos e de outras técnicas sofisticadas com o intuito de entregar 
+resultados confiáveis, obtidos com inovação e alta qualidade técnica. 
+1.2 A seleção para os cargos de que trata este edital compreenderá o exame de habilidades e conhecimentos, 
+mediante a aplicação de provas objetivas, de caráter eliminatório e classificatório, para todos os cargos, de 
+responsabilidade do Cebraspe. 
+1.3 As provas objetivas, para todos os candidatos, bem como a avaliação biopsicossocial dos candidatos que 
+solicitarem  concorrer  às  vagas  reservadas  às  pessoas  com  deficiência,  serão  realizadas  na  cidade  de 
+Manaus/AM. 
+1.3.1 Havendo indisponibilidade de locais suficientes ou adequados na localidade de realização das provas, 
+estas poderão ser realizadas em outras localidades. 
+1.4 Os candidatos nomeados estarão subordinados à Lei Estadual nº 6.868/2024, Lei nº 1.762 de 14 de 
+novembro de 1986, bem como demais legislações aplicáveis aos cargos.  
+1.5 DA IMPUGNAÇÃO DO EDITAL 
+1.5.1 Qualquer cidadão poderá impugnar fundamentadamente este edital, por meio do endereço eletrônico 
+http://www.cebraspe.org.br/concursos/ipaam_25, em link específico, no período provável estabelecido no 
+cronograma constante do Anexo I deste edital. 
+1.5.1.1 A impugnação é o ato ou efeito de impugnar, ou seja, de contestar, de contrariar ou de opor‐se, 
+fundamentadamente, ao disposto neste edital. 
+1.5.2 O impugnante deverá, necessariamente, indicar o item/subitem que será objeto de sua impugnação. 
+1.5.3  Para  requerer  a  impugnação,  o  impugnante  deverá  efetuar  cadastro  no  endereço  eletrônico  do 
+Cebraspe, caso não seja cadastrado. 
+
+
+=== PAGE 2 ===
+ 
+ 
+1.5.4 Da decisão sobre a impugnação, não caberá recurso administrativo. 
+1.5.5  As  respostas  às  impugnações  serão  disponibilizadas  em  um  único  arquivo  no  endereço  eletrônico 
+http://www.cebraspe.org.br/concursos/ipaam_25, na data provável estabelecida no cronograma constante 
+do Anexo I deste edital. 
+2 DOS CARGOS 
+2.1 DOS CARGOS DE ANALISTA AMBIENTAL 
+2.1.1 DESCRIÇÃO SUMÁRIA DAS ATIVIDADES: executar e desenvolver trabalho profissional qualificado, que 
+consiste  na  realização  do  planejamento  ambiental,  organizacional  e  estratégicos  afetos  à  execução  das 
+políticas estaduais de meio ambiente, formuladas no âmbito do Estado. Possui como atividades: 
+a) promover a regulação, o controle, o monitoramento, a fiscalização, o licenciamento, a auditoria e a perícia 
+ambiental; 
+b) promover a gestão, a proteção e o controle da qualidade ambiental; 
+c) promover o ordenamento dos recursos florestais e pesqueiros; 
+d) promover a gestão dos recursos hídricos no âmbito de suas atribuições; 
+e) promover a gestão e o controle sobre a fauna silvestre no âmbito estadual; 
+f)  promover  a  conservação  dos  ecossistemas  e  das  espécies  neles  inseridas,  incluindo  o  seu  manejo  e 
+proteção; 
+g) promover o estímulo e difusão de tecnologias, informação e educação ambientais; 
+h) promover a supervisão, o planejamento, a coordenação, a pesquisa, o controle, a análise, o planejamento 
+e a execução especializada em grau de maior complexidade, ou execução das atividades administrativas e 
+financeiras do IPAAM, na área de formação do cargo; 
+i) executar outras tarefas correlatas a sua área de atuação. 
+2.1.2  REMUNERAÇÃO:  R$  11.692,22,  composto  de  vencimento  base  +  gratificação  ambiental,  acrescido 
+quando houver de gratificação de curso e outras vantagens legais. 
+2.1.3 JORNADA DE TRABALHO: 40 horas semanais, conforme descrito na Lei nº 6.868/2024. 
+CARGO 1: ANALISTA AMBIENTAL – ESPECIALIDADE: ADMINISTRAÇÃO 
+REQUISITOS:  diploma,  devidamente  registrado,  de  conclusão  de  curso  de  graduação  em  Administração, 
+fornecido  por  instituição  de  ensino  superior  reconhecida  pelo  Ministério  da  Educação  (MEC),  e  registro 
+profissional em conselho.  
+CARGO 2: ANALISTA AMBIENTAL – ESPECIALIDADE: ANÁLISE DE SISTEMAS 
+REQUISITOS:  diploma,  devidamente  registrado,  de  conclusão  de  curso  de  graduação  em  Ciências  da 
+Computação, Sistemas de Informação ou Engenharia da Computação, fornecido por instituição de ensino 
+superior reconhecida pelo MEC, e registro profissional em conselho ou entidade de classe, se houver. 
+CARGO 3: ANALISTA AMBIENTAL – ESPECIALIDADE: ANTROPOLOGIA 
+
+
+=== PAGE 3 ===
+ 
+ 
+REQUISITOS:  diploma,  devidamente  registrado,  de  conclusão  de  curso  de  graduação  em  Antropologia, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho ou 
+entidade de classe, se houver. 
+CARGO 4: ANALISTA AMBIENTAL – ESPECIALIDADE: BIOLOGIA 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Ciências Biológicas, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho. 
+CARGO 5: ANALISTA AMBIENTAL – ESPECIALIDADE: CIÊNCIAS CONTÁBEIS 
+REQUISITOS:  diploma,  devidamente  registrado,  de  conclusão  de  curso  de  graduação  em  Contabilidade, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho. 
+CARGO 6: ANALISTA AMBIENTAL – ESPECIALIDADE: DIREITO (BACHAREL) 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em nível superior em 
+Direito,  fornecido  por  instituição  de  ensino  superior  reconhecida  pelo  MEC,  e  registro  na  Ordem  dos 
+Advogados do Brasil (OAB). 
+CARGO 7: ANALISTA AMBIENTAL – ESPECIALIDADE: ENGENHARIA AGRONÔMICA 
+REQUISITOS:  diploma,  devidamente  registrado,  de  conclusão  de  curso  de  graduação  em  Engenharia 
+Agronômica, fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em 
+conselho. 
+CARGO 8: ANALISTA AMBIENTAL – ESPECIALIDADE: ENGENHARIA AMBIENTAL/SANITARISTA 
+REQUISITOS:  diploma,  devidamente  registrado,  de  conclusão  de  curso  de  graduação  em  Engenharia 
+Ambiental ou Sanitarista, fornecido por instituição de ensino superior reconhecida pelo MEC, e registro 
+profissional em conselho. 
+CARGO 9: ANALISTA AMBIENTAL – ESPECIALIDADE: ENGENHARIA CIVIL 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Engenharia Civil, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho. 
+CARGO 10: ANALISTA AMBIENTAL – ESPECIALIDADE: ENGENHARIA DE PESCA 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Engenharia de Pesca, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho. 
+CARGO 11: ANALISTA AMBIENTAL – ESPECIALIDADE: ENGENHARIA ELÉTRICA 
+
+
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Engenharia Elétrica, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho. 
+CARGO 12: ANALISTA AMBIENTAL – ESPECIALIDADE: ENGENHARIA FLORESTAL 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Engenheiro Florestal, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho. 
+CARGO 13: ANALISTA AMBIENTAL – ESPECIALIDADE: ENGENHARIA QUÍMICA 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Engenheiro Químico, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho. 
+
+
+=== PAGE 4 ===
+ 
+ 
+CARGO 14: ANALISTA AMBIENTAL – ESPECIALIDADE: GEOGRAFIA 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Geografia, fornecido 
+por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho, se houver. 
+CARGO 15: ANALISTA AMBIENTAL – ESPECIALIDADE: GEOLOGIA 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Geologia, fornecido 
+por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho, se houver. 
+CARGO 16: ANALISTA AMBIENTAL – ESPECIALIDADE: MEDICINA VETERINÁRIA 
+REQUISITOS:  diploma,  devidamente  registrado,  de  conclusão  de  curso  de  graduação  em  Medicina 
+Veterinária, fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em 
+conselho. 
+CARGO 17: ANALISTA AMBIENTAL – ESPECIALIDADE: PEDAGOGIA 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Pedagogia, fornecido 
+por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho ou entidade de 
+classe, se houver. 
+CARGO 18: ANALISTA AMBIENTAL – ESPECIALIDADE: QUÍMICA 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Química, fornecido 
+por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho. 
+CARGO 19: ANALISTA AMBIENTAL – ESPECIALIDADE: SOCIOLOGIA 
+REQUISITOS: diploma, devidamente registrado, de conclusão de curso de graduação em Ciências Sociais, 
+fornecido por instituição de ensino superior reconhecida pelo MEC, e registro profissional em conselho ou 
+entidade de classe, se houver. 
+2.2 DO CARGO DE ASSISTENTE AMBIENTAL 
+2.2.1  DESCRIÇÃO  SUMÁRIA  DAS  ATIVIDADES:  dar  apoio  e(ou)  suporte  no  desenvolvimento  dos  serviços 
+técnicos e administrativos na regulação, controle, monitoramento, fiscalização e licenciamento ambiental, 
+abrangendo:  
+a) preparar relatórios técnicos das atividades desempenhadas;  
+b) dar apoio técnico das atividades‐fim do órgão;  
+c) redigir, digitar e controlar processos, expedientes e relatórios administrativos e técnicos;  
+d) prestar atendimento ao público em questões direcionadas à unidade administrativa;  
+e) executar outras tarefas correlatas a sua área de atuação. 
+2.2.2  REMUNERAÇÃO:  R$  4.094,56,  composto  de  vencimento  base  +  gratificação  ambiental,  acrescido 
+quando houver de gratificação de incentivo a qualificação e outras vantagens legais. 
+2.2.3 JORNADA DE TRABALHO: 40 horas semanais, conforme descrito na Lei nº 6.868/2024. 
+CARGO 20: ASSISTENTE AMBIENTAL – ESPECIALIDADE: ASSISTÊNCIA AMBIENTAL 
+REQUISITO:  certificado,  devidamente  registrado,  de  conclusão  de  curso  de  ensino  médio,  expedido  por 
+instituição de ensino reconhecida pelo órgão competente. 
+
+
+=== PAGE 5 ===
+ 
+ 
+3 DOS REQUISITOS BÁSICOS PARA A INVESTIDURA NO CARGO 
+3.1 Ser aprovado no concurso público. 
+3.2 Ter a nacionalidade brasileira ou portuguesa e, no caso de nacionalidade portuguesa, estar amparado 
+pelo  Estatuto  de  Igualdade  entre  Brasileiros  e  Portugueses,  com  reconhecimento  do  gozo  dos  direitos 
+políticos, nos termos do § 1º do art. 12 da Constituição Federal. 
+3.3 Estar em gozo dos direitos políticos. 
+3.4 Estar quite com as obrigações militares, em caso de candidato do sexo masculino. 
+3.5 Estar quite com as obrigações eleitorais. 
+3.6 Possuir os requisitos exigidos para o exercício do cargo, conforme o item 2 deste edital. 
+3.7 Ter idade mínima de 18 anos completos na data da posse. 
+3.8 Ter sanidade física e mental atestada por junta médica oficial. 
+3.9 Apresentar declaração de bens e valores que constituem o patrimônio do empossando, na forma da Lei 
+nº 1.762/1986, e suas alterações. 
+3.9.1  O  servidor,  no  ato  de  posse,  declarará  expressamente  se  ocupa  outro  cargo  ou  emprego  público, 
+especificando cada um deles com os respectivos horários, se for o caso, ou comprovará haver requerido 
+exoneração ou dispensa, na hipótese de acumulação não permitida. 
+4 DAS VAGAS 
+4.1 As vagas estão distribuídas conforme os quadros a seguir: 
+4.1.1 NÍVEL SUPERIOR: 
+Cargo/Especialidade 
+Vagas imediatas 
+Cadastro de reserva 
+(excluídas as vagas 
+imediatas) 
+AC 
+PcD 
+Total 
+AC 
+PcD 
+Total 
+Cargo 1: Analista Ambiental – Especialidade: 
+Administração 
+2 
+* 
+2 
+2 
+1 
+3 
+Cargo 2: Analista Ambiental – Especialidade: 
+Análise de Sistemas 
+2 
+1 
+3 
+2 
+1 
+3 
+Cargo 3: Analista Ambiental – Especialidade: 
+Antropologia 
+1 
+* 
+1 
+1 
+* 
+1 
+Cargo 4: Analista Ambiental – Especialidade: 
+Biologia 
+7 
+2 
+9 
+8 
+3 
+11 
+Cargo 5: Analista Ambiental – Especialidade: 
+Ciências Contábeis 
+1 
+1 
+2 
+3 
+* 
+3 
+Cargo 6: Analista Ambiental – Especialidade: 
+Direito (Bacharel) 
+4 
+2 
+6 
+5 
+2 
+7 
+Cargo 7: Analista Ambiental – Especialidade: 
+Engenharia Agronômica 
+8 
+2 
+10 
+12 
+3 
+15 
+Cargo 8: Analista Ambiental – Especialidade: 
+Engenharia Ambiental/Sanitarista 
+4 
+1 
+5 
+4 
+1 
+5 
+
+
+=== PAGE 6 ===
+ 
+ 
+Cargo/Especialidade 
+Vagas imediatas 
+Cadastro de reserva 
+(excluídas as vagas 
+imediatas) 
+AC 
+PcD 
+Total 
+AC 
+PcD 
+Total 
+Cargo 9: Analista Ambiental – Especialidade: 
+Engenharia Civil 
+4 
+1 
+5 
+5 
+2 
+7 
+Cargo 
+10: 
+Analista 
+Ambiental 
+–
+Especialidade: Engenharia de Pesca 
+4 
+* 
+4 
+4 
+2 
+6 
+Cargo 
+11: 
+Analista 
+Ambiental 
+– 
+Especialidade: Engenharia Elétrica 
+2 
+* 
+2 
+2 
+* 
+2 
+Cargo 
+12: 
+Analista 
+Ambiental 
+– 
+Especialidade: Engenharia Florestal 
+12 
+3 
+15 
+13 
+4 
+17 
+Cargo 
+13: 
+Analista 
+Ambiental 
+–
+Especialidade: Engenharia Química 
+2 
+* 
+2 
+2 
+* 
+2 
+Cargo 
+14: 
+Analista 
+Ambiental 
+– 
+Especialidade: Geografia 
+3 
+1 
+4 
+4 
+2 
+6 
+Cargo 
+15: 
+Analista 
+Ambiental 
+– 
+Especialidade: Geologia 
+4 
+2 
+6 
+7 
+2 
+9 
+Cargo 
+16: 
+Analista 
+Ambiental 
+–
+Especialidade: Medicina Veterinária 
+4 
+1 
+5 
+4 
+1 
+5 
+Cargo 
+17: 
+Analista 
+Ambiental 
+– 
+Especialidade: Pedagogia 
+1 
+* 
+1 
+1 
+* 
+1 
+Cargo 
+18: 
+Analista 
+Ambiental 
+– 
+Especialidade: Química 
+5 
+2 
+7 
+7 
+2 
+9 
+Cargo 
+19: 
+Analista 
+Ambiental 
+– 
+Especialidade: Sociologia 
+1 
+* 
+1 
+2 
+* 
+2 
+4.1.2 NÍVEL MÉDIO: 
+Cargo/Especialidade 
+Vagas imediatas 
+Cadastro de reserva 
+(excluídas as vagas 
+imediatas) 
+AC 
+PcD 
+Total 
+AC 
+PcD 
+Total 
+Cargo 20: Assistente Ambiental – Especialidade: 
+Assistência Ambiental 
+40 
+10 
+50 
+64 
+17 
+81 
+Legenda: 
+* Em razão do total de vagas, não há vagas para provimento imediato, mantendo‐se, portanto, o cadastro de 
+reserva.  
+AC: ampla concorrência. 
+PcD: pessoas com deficiência. 
+4.2 Os candidatos serão lotados de acordo com as demandas internas de cada gerência, de forma a atender 
+os interesses da Administração Pública. 
+5 DA RESERVA DE VAGAS DESTINADAS AOS CANDIDATOS COM DEFICIÊNCIA 
+
+
+=== PAGE 7 ===
+ 
+ 
+5.1 Das vagas destinadas a cada cargo/especialidade e das que vierem a ser criadas durante o prazo de 
+validade do concurso, 20% serão providas por pessoas com deficiência, dos quais 2% serão providas por 
+pessoas com Síndrome de Down, na forma do Decreto Estadual nº 30.487, de 16 de setembro de 2010, da 
+Lei Estadual nº 4.605/2018, e suas alterações, da Lei Estadual  nº 241, de 27 de março de 2015, e suas 
+alterações; da Lei Estadual nº 4.333, de 30 de maio de 2016; da Lei Federal nº 13.146, de 6 de julho de 2015; 
+
+
+e do Decreto Federal nº 9.508, de 24 de setembro de 2018, e suas alterações. 
+5.1.1 A reserva de vagas será aplicada sempre que o número de vagas oferecidas for igual ou superior a cinco. 
+5.1.1.1 Caso a aplicação do percentual de que trata o subitem 5.1 deste edital resulte em número fracionado, 
+este deve ser elevado até o primeiro número inteiro subsequente. 
+5.1.2  O  percentual  mínimo  de  reserva  será  observado  na  hipótese  de  aproveitamento  de  vagas 
+remanescentes e na formação de cadastro de reserva. 
+5.2 Serão consideradas pessoas com deficiência aquelas que se enquadrarem na Lei Promulgada nº 199, de 
+30 de abril de 2014; no art. 4º da Lei nº 241/2015, e suas alterações; no art. 2º da Lei Estadual nº 4.333/2016; 
+na Lei Estadual nº 5.811, de 25 de fevereiro de 2022; na Lei Estadual nº 5.868, de 29 de abril de 2022; na Lei 
+Estadual nº 6.064, de 24 de novembro de 2022; no art. 2º da Lei nº 13.146/2015; nas categorias discriminadas 
+no art. 4º do Decreto nº 3.298/1999, com as alterações introduzidas pelo Decreto nº 5.296/2004; no § 1º do 
+art. 1º da Lei nº 12.764, de 27 de dezembro de 2012; na Lei nº 14.126, de 21 de março de 2021, na Lei nº 
+14.768, de 22 de dezembro de 2023, observados os dispositivos da Convenção sobre os Direitos da Pessoa 
+com Deficiência e seu Protocolo Facultativo, ratificados pelo Decreto Federal nº 6.949/2009.  
+5.3 Para concorrer a uma das vagas reservadas, o candidato deverá, no período de solicitação de inscrição 
+estabelecido no cronograma constante do Anexo I deste edital, autodeclarar‐se pessoa com deficiência, 
+optar por concorrer a uma dessas vagas e indicar, em campo específico no sistema de inscrição, que deseja 
+concorrer às vagas reservadas às pessoas com deficiência. 
+5.3.1 O candidato deverá declarar, ainda, que concorda com a avaliação presencial, se necessária. 
+5.3.2 O candidato que não informar que deseja concorrer às vagas reservadas às pessoas com deficiência no 
+sistema de inscrição não terá direito de concorrer a essas vagas. 
+5.3.3 A inobservância do disposto no subitem 5.3 deste edital acarretará a perda do direito de concorrer às 
+vagas reservadas aos candidatos com deficiência. 
+5.3.4 Até o final do período de inscrições do certame, será facultado ao candidato optar por concorrer às 
+vagas reservadas às pessoas com deficiência ou desistir de concorrer a essas vagas. 
+5.4 O candidato com deficiência poderá requerer, na forma do subitem 6.4.9 deste edital, atendimento 
+especializado, podendo solicitar adaptações razoáveis e tecnologias assistivas, no ato da solicitação de 
+inscrição, para o dia de realização das provas e das demais fases do concurso, devendo indicar as condições 
+de que necessita para a realização destas, conforme o previsto no § 1º do art. 31 do Decreto Estadual nº 
+30.487/2010. 
+5.5 Ressalvadas as disposições previstas neste edital, os candidatos com deficiência participarão do concurso 
+em igualdade de condições com os demais candidatos, no que tange ao conteúdo de provas, à avaliação e 
+aos critérios de aprovação, ao horário e ao local de aplicação das provas, à nota mínima exigida para os 
+demais candidatos e a todas as demais normas de regência do concurso. 
+5.6 DOS PROCEDIMENTOS DE ANÁLISE PARA A CARACTERIZAÇÃO DA DEFICIÊNCIA 
+
+
+=== PAGE 8 ===
+ 
+ 
+5.6.1 O candidato que solicitou concorrer às vagas reservadas às pessoas com deficiência será convocado 
+para se submeter ao procedimento de caracterização da deficiência, que se destina a analisar a qualificação 
+do candidato como pessoa com deficiência, nos termos da legislação federal e estadual em vigor, bem como 
+a  compatibilidade  da  deficiência  com  as  atribuições  do  cargo/especialidade.  O  referido  procedimento, 
+promovido por equipe multiprofissional e interdisciplinar de responsabilidade do Cebraspe, poderá ocorrer 
+em duas etapas: 
+a) a primeira etapa será realizada a partir da análise da documentação comprobatória/caracterizadora da 
+deficiência, conforme procedimento descrito no subitem 5.6.2 deste edital; 
+b) a segunda etapa será realizada somente em caso de dúvida quanto à caracterização da deficiência, por 
+meio de análise presencial. 
+5.6.2 DO PROCEDIMENTO DE ANÁLISE DOCUMENTAL PARA A CARACTERIZAÇÃO DA DEFICIÊNCIA 
+5.6.2.1 Para o procedimento de análise documental para a caracterização da deficiência, será analisada a 
+documentação  comprobatória/caracterizadora  da  deficiência  dos  candidatos  não  reprovados  nas  provas 
+objetivas, na forma do subitem de 8.14.6 deste edital, dentro dos quantitativos especificados no quadro a 
+seguir: 
+Cargo/Especialidade 
+(nível superior e nível médio) 
+Convocação para a 
+análise documental para 
+a caracterização da 
+deficiência 
+Cargo 1: Analista Ambiental – Especialidade: Administração 
+5 
+Cargo 2: Analista Ambiental – Especialidade: Análise de Sistemas 
+5 
+Cargo 3: Analista Ambiental – Especialidade: Antropologia 
+5 
+Cargo 4: Analista Ambiental – Especialidade: Biologia 
+15 
+Cargo 5: Analista Ambiental – Especialidade: Ciências Contábeis 
+5 
+Cargo 6: Analista Ambiental – Especialidade: Direito (Bacharel) 
+12 
+Cargo 7: Analista Ambiental – Especialidade: Engenharia Agronômica 
+15 
+Cargo 8: Analista Ambiental – Especialidade: Engenharia Ambiental/Sanitarista 
+6 
+Cargo 9: Analista Ambiental – Especialidade: Engenharia Civil 
+9 
+Cargo 10: Analista Ambiental – Especialidade: Engenharia de Pesca 
+6 
+Cargo 11: Analista Ambiental – Especialidade: Engenharia Elétrica 
+5 
+Cargo 12: Analista Ambiental – Especialidade: Engenharia Florestal 
+21 
+Cargo 13: Analista Ambiental – Especialidade: Engenharia Química 
+5 
+Cargo 14: Analista Ambiental – Especialidade: Geografia 
+9 
+Cargo 15: Analista Ambiental – Especialidade: Geologia 
+12 
+Cargo 16: Analista Ambiental – Especialidade: Medicina Veterinária 
+6 
+Cargo 17: Analista Ambiental – Especialidade: Pedagogia 
+5 
+Cargo 18: Analista Ambiental – Especialidade: Química 
+12 
+Cargo 19: Analista Ambiental – Especialidade: Sociologia 
+5 
+Cargo 20: Assistente Ambiental – Especialidade: Assistência Ambiental 
+81 
+5.6.2.2 Para o procedimento de análise documental para a caracterização da deficiência, o candidato deverá 
+enviar, 
+via 
+upload, 
+por 
+meio 
+de 
+link 
+específico 
+no 
+endereço 
+eletrônico 
+http://www.cebraspe.org.br/concursos/ipaam_25,  no  período  provável  estabelecido  no  cronograma 
+
+
+=== PAGE 9 ===
+ 
+ 
+constante do Anexo I deste edital, a imagem legível de documentação comprobatória/caracterizadora da 
+deficiência, conforme modelo disponível no Anexo II deste edital.  
+5.6.2.2.1 Poderá ser utilizado como documentação comprobatória/caracterizadora da deficiência relatório 
+de avaliação biopsicossocial da deficiência, emitido nos últimos 36 meses anteriores à data de publicação 
+deste edital. 
+5.6.2.3  A  documentação  comprobatória/caracterizadora  da  deficiência  constante  do  5.6.2.2  deste  edital 
+deverá conter a identificação do candidato, a espécie e o grau ou o nível de sua deficiência, bem como a data 
+da  emissão  e  a  assinatura  e  o  carimbo  do  profissional  responsável,  com  o  número  de  sua  inscrição  no 
+Conselho Regional Profissional ou entidade de classe, quando cabível. 
+5.6.2.4 Todas as imagens dos documentos apresentados pelo candidato, inclusive as de laudos médicos ou 
+caracterizadores  de  deficiência,  deverão  estar  integralmente  legíveis,  de  forma  a  permitir  a  plena 
+identificação de todas as informações: textos, assinaturas, carimbos, números de inscrição em Conselhos 
+Regionais e demais dados constantes. A apresentação de imagens de documento parcialmente ou totalmente 
+ilegível, seja por má qualidade de digitalização, fotografia inadequada ou outro motivo, poderá resultar na 
+não  aceitação  do  documento,  sendo  de  inteira  responsabilidade  do  candidato  eventuais  prejuízos 
+decorrentes. 
+5.6.2.5 A documentação comprobatória/caracterizadora da deficiência deverá ter sido emitida nos últimos 
+36 meses anteriores à data de publicação deste edital. 
+
+
+5.6.2.5.1 No caso dos candidatos cuja deficiência se enquadre no art. 1º, § 1º, da Lei nº 12.764, de 27 de 
+dezembro  de  2012  (Transtorno  do  Espectro  Autista),  ou  dos  candidatos  com  outros  impedimentos 
+irreversíveis que caracterizem deficiência permanente, a validade da documentação é indeterminada. 
+5.6.2.6 A imagem da documentação caracterizadora da deficiência terá validade somente para este concurso 
+público e não será devolvida, assim como não serão fornecidas cópias desse documento. 
+5.6.2.6.1  As  deliberações  da  equipe  multiprofissional  e  interdisciplinar  referentes  à  caracterização  da 
+deficiência terão validade exclusivamente para este certame. 
+5.6.2.7 O candidato cuja deficiência se enquadra no § 1º do art. 1º da Lei nº 12.764/2012 (Transtorno do 
+Espectro  Autista)  deverá  enviar,  além  de  documentação  comprobatória/caracterizadora  da  deficiência, 
+relatório  especializado,  emitido  por  médico  ou  psicólogo,  explicitando  as  seguintes  características, 
+associando‐as a dados temporais (com início e duração de alterações e(ou) prejuízos):  
+a) capacidade de comunicação e interação social;  
+b) reciprocidade social;  
+c) qualidade das relações interpessoais; e  
+d) presença ou ausência de estereotipias verbais, estereotipias motoras, comportamentos repetitivos ou 
+interesses específicos, restritos e fixos. 
+5.6.2.8  Quando  se  tratar  de  deficiência  auditiva,  o  candidato  deverá  enviar,  além  de  documentação 
+comprobatória/caracterizadora da deficiência, exame audiométrico – audiometria realizado no máximo 36 
+meses anteriores à data de publicação deste edital. Caso o candidato utilize Aparelho de Amplificação Sonora 
+Individual (AASI), deverá apresentar audiometria sem AASI. 
+5.6.2.8.1  Para  fins  de  comprovação/caracterização  da  deficiência  auditiva,  serão  adotados  os  critérios 
+estabelecidos na Lei Estadual nº 241/2015, e suas alterações, na Lei nº 14.768, de 22 de dezembro de 2023, 
+
+
+=== PAGE 10 ===
+ 
+ 
+e na Orientação Técnica SIT nº 02/2024, do Ministério do Trabalho e Emprego, que toma como referência os 
+graus de perda auditiva definidos pela Organização Mundial da Saúde (OMS), conforme classificação de 2020. 
+5.6.2.9  Quando  se  tratar  de  deficiência  visual,  a  documentação  comprobatória/caracterizadora  da 
+deficiência deverá conter informações expressas sobre a acuidade visual aferida com e sem correção e sobre 
+a medida do campo visual individual de cada olho e a somatória do campo visual binocular. 
+5.6.2.10  Quando  se  tratar  de  deficiência  física,  a  documentação  comprobatória/caracterizadora  da 
+deficiência  deverá  conter  descrição  detalhada  dos  impedimentos  físicos,  que  descreva  as  alterações 
+anatômicas e(ou) funcionais e especifique as limitações funcionais para a vida diária e a necessidade do uso 
+de apoios, como por exemplo, uso de próteses e(ou) órteses. 
+5.6.2.11  Em  caso  de  deficiência  intelectual,  o  candidato  deverá  enviar,  além  de  documentação 
+comprobatória/caracterizadora da deficiência, relatório especializado complementar elaborado por médico 
+ou  psicólogo,  contendo  descrição  clínica  e  funcional  detalhada  com  base  em  instrumentos  técnicos 
+reconhecidos,  informações  sobre  o  início  e  histórico  da  condição,  resultados  de  avaliação  cognitiva 
+padronizada com indicação do instrumento utilizado e do Quociente de Inteligência (QI), além do relato do 
+impacto  da  condição  nas  atividades  da  vida  diária  e  no  desempenho  adaptativo,  abrangendo,  quando 
+aplicável,  as  áreas  de  comunicação,  cuidado  pessoal,  habilidades  sociais,  uso  da  comunidade,  saúde  e 
+segurança, habilidades acadêmicas, lazer e trabalho. 
+5.6.2.12 Como complementação da documentação mencionada nos subitens 5.6.2.2 a 5.6.2.11 deste edital, 
+o  candidato  poderá apresentar,  na forma  do  subitem  5.6.2.2  deste  edital,  imagens  de  documentos  que 
+comprovem o reconhecimento administrativo prévio da deficiência expedidos por órgão ou entidade da 
+administração pública federal direta, autárquica ou fundacional e(ou) relatórios de avaliações biopsicossocial 
+da deficiência, emitidos nos últimos 36 meses anteriores à data de publicação deste edital. 
+5.6.2.12.1 O reconhecimento administrativo prévio da deficiência a que se refere o subitem 5.6.2.12 deste 
+edital não garante o enquadramento automático da condição como deficiência para os fins deste edital, 
+cabendo à equipe multiprofissional e interdisciplinar a análise e decisão quanto à sua validade no âmbito do 
+certame. 
+5.6.2.13 Perderá o direito de concorrer às vagas reservadas às pessoas com deficiência e não terá a solicitação 
+de inscrição efetivada para concorrer às vagas reservadas o candidato que: 
+a) não enviar imagem legível da documentação comprobatória/caracterizadora da deficiência; 
+b)  enviar documentação comprobatória/caracterizadora da deficiência emitida em período superior a 36 
+meses anteriores à publicação deste edital, exceto no caso dos candidatos cuja deficiência se enquadra no 
+§ 1º  do  art.  1º  da  Lei  nº 12.764/2012  ou  de  candidatos  com  outros  impedimentos  irreversíveis  que 
+caracterizem deficiência permanente. 
+5.6.2.14 O envio da imagem legível da documentação comprobatória/caracterizadora da deficiência é de 
+responsabilidade  exclusiva  do  candidato.  O  Cebraspe  não  se  responsabilizará  pelo  indeferimento  da 
+solicitação do candidato em razão do envio de imagens parciais ou totalmente ilegíveis, conforme subitem 
+5.6.2.4 deste edital, nem por qualquer tipo de problema que impeça a chegada do documento a seu destino, 
+seja de ordem técnica dos computadores, seja decorrente de falhas de comunicação, bem como por outros 
+fatores que impossibilitem o envio. 
+5.6.2.14.1  Somente  serão  aceitas  imagens  que  estejam  nas  extensões  “.pdf”,  “.png”, “.jpeg”  e  “.jpg”.  O 
+tamanho de cada imagem submetida deverá ser de, no máximo, 2 MB. 
+
+
+=== PAGE 11 ===
+ 
+ 
+5.6.2.14.2 O candidato deverá manter aos seus cuidados o original ou a cópia autenticada em cartório da 
+documentação comprobatória/caracterizadora da deficiência de que trata o subitem 5.6.2.2 deste edital. 
+Caso  seja  solicitado  pelo Cebraspe,  o  candidato  deverá  enviar  o  referido  documento  por meio  de  carta 
+registrada, para a confirmação da veracidade das informações.  
+5.6.2.15  O  procedimento  de  análise  documental  para  a  caracterização  da  deficiência  será  realizado  por 
+equipe  multiprofissional  e  interdisciplinar,  de  responsabilidade  Cebraspe,  por  meio  de  análise  da 
+documentação comprobatória/caracterizadora, prevista no subitem 5.6.2 deste edital e, se necessário, em 
+caso de dúvidas, da avaliação presencial, conforme estabelecido no subitem 5.6.3 deste edital. 
+5.6.2.16 A análise documental será realizada em sistema informatizado disponibilizado exclusivamente para 
+esse  fim,  por  meio  do  qual  a  equipe  multiprofissional  e  interdisciplinar  —  composta  por  três  pessoas 
+profissionais capacitadas e atuantes nas áreas das deficiências que o candidato possuir e de diferentes áreas 
+de  conhecimento,  dentre  as  quais  uma  deverá  ser  da  área  de  medicina  —  terá  acesso  às  imagens  dos 
+documentos apresentados pelo candidato nos termos do subitem 5.6.2.2 deste edital.  
+5.6.2.17  A  equipe  multiprofissional  e  interdisciplinar,  após  análise  documental,  emitirá  parecer  que 
+observará:  
+a) as informações prestadas pelo candidato no ato da solicitação de inscrição no concurso público; 
+b) a natureza das atribuições e das tarefas essenciais ao cargo, do emprego ou da função a desempenhar; 
+c) as condições de acessibilidade e as adequações do ambiente de trabalho na execução das tarefas; 
+d) a possibilidade de uso, pelo candidato, de equipamentos ou de outros meios que utilize de forma habitual; 
+e) o resultado da avaliação com base no disposto no § 1º do art. 2º da Lei Federal nº 13.146/2015, sem 

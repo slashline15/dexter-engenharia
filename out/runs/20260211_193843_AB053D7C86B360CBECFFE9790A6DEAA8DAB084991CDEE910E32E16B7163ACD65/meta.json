@@ -1,0 +1,14 @@
+{
+  "pipeline_version": "0.2",
+  "model": "gpt-5.2",
+  "pdf_path": "C:\\Users\\Daniel\\Downloads\\AB053D7C86B360CBECFFE9790A6DEAA8DAB084991CDEE910E32E16B7163ACD65.pdf",
+  "chars_extracted": 343803,
+  "chars_prompt": 32604,
+  "prompt_chars": 32604,
+  "response_chars": 14366,
+  "cache_hit": false,
+  "request_id": "chatcmpl-D8AKEYoyxIcAc32S674ppyYA5aCOV",
+  "ocr": "off",
+  "local_model": "off",
+  "elapsed_seconds": 41.72
+}
