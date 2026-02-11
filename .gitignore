@@ -1,6 +1,12 @@
 .env
-*/__pycache__/
+*/__pycache__/*
 *.pyc
 *.pyo
-.claude/session1.md
-.claude/session2.md
+.claude/*.json
+.claude/*.md
+.claude/
+.claude\settings.local.json
+
+.claude/
+src\dexter_eng.egg-info\*
+src\dexter_eng\__pycache__\*
