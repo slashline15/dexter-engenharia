@@ -15,6 +15,7 @@ from dexter_eng.persistence.db import (
     finish_run,
     get_or_create_document,
     init_db,
+    record_run_metrics,
 )
 from dexter_eng.pipeline.steps.step_chunk import chunk_text
 from dexter_eng.pipeline.steps import step_llm_structured
@@ -68,8 +69,11 @@ def run_edital_pipeline(
     prompt_template: str,
     out_dir: str,
     max_chars: int,
+    ocr: str = "off",
+    local_model: str = "off",
 ) -> Path:
     logger.info("=== Pipeline v%s iniciado para: %s ===", PIPELINE_VERSION, pdf_path)
+    logger.info("Flags futuras: ocr=%s, local_model=%s (desativadas nesta fase)", ocr, local_model)
     t0 = time.monotonic()
 
     # Inicializar persistência
@@ -91,6 +95,19 @@ def run_edital_pipeline(
 
         # 3. Extrair dados estruturados via LLM
         extraction = extract_edital_structured(llm, prompt_template, merged)
+
+        # 3b. Registrar métricas da etapa LLM
+        prompt_chars = len(step_llm_structured._last_prompt)
+        response_chars = len(step_llm_structured._last_raw_response)
+        cache_hit = step_llm_structured._last_cache_hit
+        request_id = step_llm_structured._last_request_id
+        record_run_metrics(
+            run_id,
+            prompt_chars=prompt_chars,
+            response_chars=response_chars,
+            cache_hit=cache_hit,
+            request_id=request_id,
+        )
 
         # 4. Aplicar regras de negócio
         extraction = apply_edital_rules(extraction)
@@ -116,7 +133,12 @@ def run_edital_pipeline(
             "pdf_path": pdf_path,
             "chars_extracted": len(text),
             "chars_prompt": len(step_llm_structured._last_prompt),
-            "cache_hit": step_llm_structured._last_cache_hit,
+            "prompt_chars": prompt_chars,
+            "response_chars": response_chars,
+            "cache_hit": cache_hit,
+            "request_id": request_id,
+            "ocr": ocr,
+            "local_model": local_model,
             "elapsed_seconds": round(elapsed, 2),
         }
 

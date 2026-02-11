@@ -17,6 +17,7 @@ logger = logging.getLogger(__name__)
 _last_prompt: str = ""
 _last_raw_response: str = ""
 _last_cache_hit: bool = False
+_last_request_id: str | None = None
 
 
 def _extract_json(text: str) -> str:
@@ -40,7 +41,7 @@ def _extract_json(text: str) -> str:
 def extract_edital_structured(
     llm: LLMClient, prompt_template: str, text: str
 ) -> EditalExtraction:
-    global _last_prompt, _last_raw_response, _last_cache_hit
+    global _last_prompt, _last_raw_response, _last_cache_hit, _last_request_id
 
     prompt = prompt_template.replace("{{TEXT}}", text)
     _last_prompt = prompt
@@ -54,10 +55,20 @@ def extract_edital_structured(
         logger.info("Cache HIT (hash=%s…)", prompt_hash[:12])
         resp = cached
         _last_cache_hit = True
+        _last_request_id = None
     else:
         logger.info("Cache MISS (hash=%s…)", prompt_hash[:12])
-        resp = llm.complete(prompt).text.strip()
-        save_cached_response(prompt_hash, llm.model, resp)
+        llm_response = llm.complete(prompt)
+        resp = llm_response.text.strip()
+        raw = llm_response.raw or {}
+        _last_request_id = raw.get("id") if isinstance(raw, dict) else None
+        save_cached_response(
+            prompt_hash,
+            llm.model,
+            resp,
+            prompt_chars=len(prompt),
+            response_chars=len(resp),
+        )
         _last_cache_hit = False
 
     _last_raw_response = resp
