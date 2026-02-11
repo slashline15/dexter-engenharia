@@ -1,0 +1,2 @@
+[console_scripts]
+dexter = dexter_eng.cli.main:app

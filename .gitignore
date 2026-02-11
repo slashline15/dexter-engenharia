@@ -1,0 +1,6 @@
+.env
+*/__pycache__/
+*.pyc
+*.pyo
+.claude/session1.md
+.claude/session2.md

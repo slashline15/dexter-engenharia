@@ -1,0 +1,9 @@
+{
+  "pipeline_version": "0.2",
+  "model": "gpt-5.2",
+  "pdf_path": "src/dexter_eng/data/samples/edital_exemplo.pdf",
+  "chars_extracted": 15186,
+  "chars_prompt": 15828,
+  "cache_hit": false,
+  "elapsed_seconds": 27.83
+}
